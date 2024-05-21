@@ -3,7 +3,7 @@
 {% block content %}
    {{super()}}
    <div class="container text-center">
-       <form class="d-inline-block" style="max-width: 33%;">
+       <form class="d-inline-block" style="max-width: 33%;" action="{{ url_for('add_event') }}" method="POST">
            <div class="form-group">
                <label for="eventDate">Дата</label>
                <input type="date" name="eventDate" class="form-control" placeholder="Дата события">
@@ -20,7 +20,10 @@
        </form>
 
        <div class="alert-info">
+
            <p>   </p>
+           <a href="{{ url_for('view_events') }}"><h2>Посмотреть события</h2></a>
+
            <h1><a href="/about">О нас </a></h1>
 
        </div>
